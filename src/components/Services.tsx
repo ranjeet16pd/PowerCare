@@ -32,7 +32,7 @@ function ServiceIcon({ service }: { service: ServiceDefinition }) {
   const Icon = iconMap[service.icon];
   return (
     <span
-      className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-navy-50 text-navy-800"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/95 text-navy-800"
       aria-hidden
     >
       <Icon className="h-5 w-5" />
@@ -56,9 +56,22 @@ export function Services({ onBookService }: ServicesProps) {
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <li key={service.id}>
-              <Card className="flex h-full flex-col transition-shadow hover:shadow-md">
+              <Card className="group flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={service.image.src}
+                    alt={service.image.alt}
+                    className="aspect-[16/10] w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                    width={640}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute left-3 top-3 rounded-lg shadow-sm">
+                    <ServiceIcon service={service} />
+                  </div>
+                </div>
                 <CardHeader>
-                  <ServiceIcon service={service} />
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription>{service.shortDescription}</CardDescription>
                 </CardHeader>

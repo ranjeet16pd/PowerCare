@@ -96,6 +96,11 @@ export function Footer() {
             reference only and do not imply authorised dealership, partnership or
             certification by those manufacturers.
           </p>
+          <p>
+            Site photos are licensed stock from Unsplash and Pexels. Replace
+            files in <code className="text-navy-300">public/images/</code> with
+            your own site photos anytime.
+          </p>
           <p>© {year} {businessConfig.name}. All rights reserved.</p>
         </div>
       </div>

@@ -50,8 +50,19 @@ Replace placeholders like `[PHONE NUMBER]` and `[CITY / SERVICE AREA]` with real
 
 ### Images
 
-- Default hero: `public/images/hero-electrical-panel.svg` (placeholder illustration).
-- Swap in a **licensed** photo (e.g. `hero-electrical-panel.jpg`) and update `heroImage.src` in `business.ts`.
+Licensed Unsplash/Pexels photos live in `public/images/`:
+
+| File | Used on |
+|------|---------|
+| `hero-electrical-panel.jpg` | Hero + panel upgrades card |
+| `electrician-at-work.jpg` | Hero inset + Why choose us |
+| `service-panel-repair.jpg` | Panel inspection card |
+| `service-generator.jpg` | Generator card |
+| `service-amf.jpg` | AMF/ATS card |
+| `service-amc.jpg` | Annual maintenance + How it works |
+| `segment-*.jpg` | Who we serve tiles |
+
+Replace any file with your own licensed site photo (keep the same filename) — no code change needed for most of them. Hero/technician paths are in `business.ts`.
 
 ### Sample reviews
 

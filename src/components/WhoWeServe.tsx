@@ -1,21 +1,36 @@
-import {
-  Building2,
-  Factory,
-  GraduationCap,
-  Hotel,
-  Home,
-  Briefcase,
-} from "lucide-react";
-
 import { SectionHeading } from "@/components/SectionHeading";
 
 const segments = [
-  { icon: Factory, label: "Factories" },
-  { icon: Home, label: "Housing societies" },
-  { icon: Hotel, label: "Hotels" },
-  { icon: GraduationCap, label: "Schools" },
-  { icon: Briefcase, label: "Offices" },
-  { icon: Building2, label: "Commercial buildings" },
+  {
+    label: "Factories",
+    src: "/images/segment-factory.jpg",
+    alt: "Industrial factory floor",
+  },
+  {
+    label: "Housing societies",
+    src: "/images/segment-society.jpg",
+    alt: "Residential apartment buildings",
+  },
+  {
+    label: "Hotels",
+    src: "/images/segment-hotel.jpg",
+    alt: "Hotel building at dusk",
+  },
+  {
+    label: "Schools",
+    src: "/images/segment-school.jpg",
+    alt: "School campus building",
+  },
+  {
+    label: "Offices",
+    src: "/images/segment-office.jpg",
+    alt: "Open-plan office workspace",
+  },
+  {
+    label: "Commercial buildings",
+    src: "/images/segment-commercial.jpg",
+    alt: "Modern commercial building exterior",
+  },
 ];
 
 export function WhoWeServe() {
@@ -33,13 +48,19 @@ export function WhoWeServe() {
           {segments.map((item) => (
             <li
               key={item.label}
-              className="flex flex-col items-center rounded-xl border border-navy-100 bg-navy-50/40 px-3 py-5 text-center"
+              className="group relative overflow-hidden rounded-xl border border-navy-100 shadow-sm"
             >
-              <item.icon
-                className="mb-2 h-7 w-7 text-navy-700"
-                aria-hidden
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="aspect-[4/5] w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                width={320}
+                height={400}
+                loading="lazy"
+                decoding="async"
               />
-              <span className="text-sm font-semibold text-navy-900">
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent" />
+              <span className="absolute inset-x-0 bottom-0 p-3 text-center text-sm font-semibold text-white">
                 {item.label}
               </span>
             </li>

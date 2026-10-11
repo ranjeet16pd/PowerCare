@@ -26,6 +26,10 @@ export interface BusinessConfig {
     alt: string;
     credit?: string;
   };
+  technicianImage: {
+    src: string;
+    alt: string;
+  };
   meta: {
     title: string;
     description: string;
@@ -42,10 +46,12 @@ export const businessConfig: BusinessConfig = {
   whatsappNumber: "9315230568",
   businessHours: "Mon–Sat, 9:00 AM – 6:00 PM (IST)",
   heroImage: {
-    src: "/images/hero-electrical-panel.svg",
-    alt: "Technician inspecting an industrial electrical control panel",
-    credit:
-      "Replace with your licensed photo at public/images/hero-electrical-panel.svg (or .jpg) and update src in business.ts",
+    src: "/images/hero-electrical-panel.jpg",
+    alt: "Industrial electrical control panel with meters, switches and lockout tags",
+  },
+  technicianImage: {
+    src: "/images/electrician-at-work.jpg",
+    alt: "Technician working on an electrical enclosure",
   },
   meta: {
     title: "PowerCare Services | Electrical Panel & Generator Service",
@@ -96,6 +102,10 @@ export interface ServiceDefinition {
   title: string;
   shortDescription: string;
   icon: "panel" | "generator" | "switch" | "shield" | "upgrade" | "calendar";
+  image: {
+    src: string;
+    alt: string;
+  };
 }
 
 export const services: ServiceDefinition[] = [
@@ -105,6 +115,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "Fault finding, breaker issues, wiring checks and safe restoration of panel operations.",
     icon: "panel",
+    image: {
+      src: "/images/service-panel-repair.jpg",
+      alt: "Close-up of an electrical panel with circuit breakers being inspected",
+    },
   },
   {
     id: "generator_inspection_maintenance",
@@ -112,6 +126,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "Startup checks, load testing support, fluid levels and routine generator care.",
     icon: "generator",
+    image: {
+      src: "/images/service-generator.jpg",
+      alt: "Industrial diesel generator in a plant room",
+    },
   },
   {
     id: "amf_ats_troubleshooting",
@@ -119,6 +137,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "Auto/manual changeover faults, AMF logic issues and power transfer problems.",
     icon: "switch",
+    image: {
+      src: "/images/service-amf.jpg",
+      alt: "Outdoor electrical control cabinet with contactors and display modules",
+    },
   },
   {
     id: "preventive_maintenance",
@@ -126,6 +148,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "Scheduled visits to reduce breakdown risk for panels and backup power systems.",
     icon: "shield",
+    image: {
+      src: "/images/electrician-at-work.jpg",
+      alt: "Technician inspecting wall-mounted electrical equipment",
+    },
   },
   {
     id: "panel_upgrades",
@@ -133,6 +159,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "MCB/MCCB, contactors, meters and control components — quoted before replacement.",
     icon: "upgrade",
+    image: {
+      src: "/images/hero-electrical-panel.jpg",
+      alt: "Industrial panel meters, selector switches and control components",
+    },
   },
   {
     id: "annual_maintenance",
@@ -140,6 +170,10 @@ export const services: ServiceDefinition[] = [
     shortDescription:
       "Discuss yearly visit plans for societies, hotels and facilities with multiple assets.",
     icon: "calendar",
+    image: {
+      src: "/images/service-amc.jpg",
+      alt: "Facility team reviewing a service plan on site",
+    },
   },
 ];
 

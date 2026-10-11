@@ -30,9 +30,9 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-navy-100 bg-gradient-to-b from-white to-navy-50/60"
+      className="relative overflow-hidden border-b border-navy-100 bg-navy-50/40"
     >
-      <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-amber-brand/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(ellipse_at_top_right,_rgba(245,158,11,0.08),_transparent_55%)] lg:block" />
       <div className="section-pad container-narrow">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={motionSafeClass("animate-fade-up")}>
@@ -52,33 +52,40 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-2xl border border-navy-100 bg-navy-900 shadow-xl">
+          <div className="relative sm:pb-8">
+            <div className="absolute -left-3 top-8 hidden h-[72%] w-3 rounded-full bg-amber-brand sm:block" aria-hidden />
+            <div className="relative overflow-hidden rounded-2xl border border-navy-800/20 bg-navy-900 shadow-2xl">
               <img
                 src={businessConfig.heroImage.src}
                 alt={businessConfig.heroImage.alt}
-                className="aspect-[4/3] h-full w-full object-cover"
+                className="aspect-[4/5] h-full w-full object-cover sm:aspect-[4/3]"
                 width={800}
                 height={600}
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4 sm:p-5">
-                <p className="text-sm text-white/90">
-                  Professional panel &amp; generator service for commercial
-                  facilities
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/85 via-navy-950/35 to-transparent p-4 sm:p-5">
+                <p className="text-sm font-medium text-white">
+                  Industrial panel inspection for factories and commercial sites
                 </p>
               </div>
             </div>
-            {businessConfig.heroImage.credit && (
-              <p className="mt-2 text-xs text-muted-foreground">
-                {businessConfig.heroImage.credit}
-              </p>
-            )}
+            <div className="absolute -bottom-6 -right-2 hidden w-[46%] overflow-hidden rounded-xl border-4 border-white shadow-xl sm:block">
+              <img
+                src={businessConfig.technicianImage.src}
+                alt={businessConfig.technicianImage.alt}
+                className="aspect-[4/3] w-full object-cover"
+                width={400}
+                height={300}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
 
-        <ul className="mt-12 grid gap-4 sm:grid-cols-3">
+        <ul className="mt-16 grid gap-4 sm:grid-cols-3">
           {highlights.map((item) => (
             <li
               key={item.title}
