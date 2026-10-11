@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "powercare-services",
+  "account_id": "e66ac45d15424d5d5262461d5c71ddf1",
   "compatibility_date": "2025-10-11",
   "main": "./worker/index.ts",
   "assets": {

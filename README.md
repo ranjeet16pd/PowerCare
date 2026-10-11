@@ -67,7 +67,29 @@ public/        Static images and favicon
 wrangler.jsonc Cloudflare Worker + SPA asset routing
 ```
 
-## Deployment (Cloudflare Workers, free tier friendly)
+## Production URL
+
+**Live site:** [https://powercare-services.ranjeet16pd.workers.dev](https://powercare-services.ranjeet16pd.workers.dev)
+
+Health check: `https://powercare-services.ranjeet16pd.workers.dev/api/health`
+
+## Auto-deploy from GitHub (recommended)
+
+Every push to **`main`** on [github.com/ranjeet16pd/PowerCare](https://github.com/ranjeet16pd/PowerCare) runs `.github/workflows/deploy.yml` and updates production.
+
+### One-time setup (GitHub secret)
+
+1. In [Cloudflare](https://dash.cloudflare.com/profile/api-tokens), create an API token:
+   - **Use template:** “Edit Cloudflare Workers”
+   - Or custom permissions: **Account → Workers Scripts → Edit**, **Account → Workers KV Storage → Edit** (if prompted), **Account → Account Settings → Read**
+2. In GitHub: **PowerCare → Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `CLOUDFLARE_API_TOKEN`
+   - Value: paste the token from step 1
+3. Push any commit to `main` (or re-run the workflow under **Actions**).
+
+After the secret is set, you only need to **push code** — no manual `npm run deploy` on your laptop.
+
+## Manual deployment (Cloudflare Workers)
 
 1. Install [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and log in: `npx wrangler login`
 2. Optionally change the Worker name in `wrangler.jsonc` (`name` field).
