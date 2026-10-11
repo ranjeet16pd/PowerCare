@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Electrical panel placeholder illustration</title>
+  <desc id="desc">Stylized industrial electrical panel and generator motif for PowerCare Services</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15243a"/>
+      <stop offset="100%" stop-color="#0c1626"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect x="120" y="80" width="360" height="440" rx="12" fill="#1f3654" stroke="#3d6396" stroke-width="4"/>
+  <rect x="150" y="120" width="300" height="48" rx="6" fill="#0c1626"/>
+  <rect x="150" y="190" width="130" height="90" rx="8" fill="#2d4d78" stroke="#5f82b0" stroke-width="2"/>
+  <rect x="300" y="190" width="150" height="90" rx="8" fill="#2d4d78" stroke="#5f82b0" stroke-width="2"/>
+  <circle cx="180" cy="235" r="18" fill="url(#accent)"/>
+  <circle cx="250" cy="235" r="18" fill="#eef2f8" opacity="0.9"/>
+  <rect x="150" y="310" width="300" height="16" rx="4" fill="#3d6396"/>
+  <rect x="150" y="340" width="220" height="16" rx="4" fill="#3d6396" opacity="0.7"/>
+  <rect x="150" y="370" width="260" height="16" rx="4" fill="#3d6396" opacity="0.5"/>
+  <rect x="520" y="160" width="180" height="280" rx="10" fill="#1f3654" stroke="#f59e0b" stroke-width="3"/>
+  <rect x="545" y="200" width="130" height="70" rx="6" fill="#0c1626"/>
+  <path d="M560 380h100v40H560z" fill="#2d4d78"/>
+  <circle cx="610" cy="360" r="28" fill="url(#accent)" opacity="0.95"/>
+  <path d="M610 342v36M592 360h36" stroke="#0c1626" stroke-width="4" stroke-linecap="round"/>
+  <text x="400" y="560" text-anchor="middle" fill="#8aa5c9" font-family="system-ui,sans-serif" font-size="18">Image placeholder  replace with your licensed site photo</text>
+</svg>

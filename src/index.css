@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 35% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 12%;
+    --primary: 215 52% 22%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 215 35% 18%;
+    --muted: 210 25% 93%;
+    --muted-foreground: 215 15% 42%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 215 35% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 24% 86%;
+    --input: 214 24% 86%;
+    --ring: 215 52% 22%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-navy-700 ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .section-pad {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+}
