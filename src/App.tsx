@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { BookingForm } from "@/components/BookingForm";
 import { FAQ } from "@/components/FAQ";
@@ -9,10 +9,10 @@ import { OfferBar } from "@/components/OfferBar";
 import { Offers } from "@/components/Offers";
 import { HowItWorks } from "@/components/HowItWorks";
 import { MobileActionBar } from "@/components/MobileActionBar";
+import { Seo } from "@/components/Seo";
 import { Services } from "@/components/Services";
 import { WhoWeServe } from "@/components/WhoWeServe";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { businessConfig } from "@/config/business";
 import type { ServiceId } from "@shared/types";
 
 function App() {
@@ -20,16 +20,9 @@ function App() {
     ServiceId | undefined
   >();
 
-  useEffect(() => {
-    document.title = businessConfig.meta.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", businessConfig.meta.description);
-    }
-  }, []);
-
   return (
     <>
+      <Seo />
       <div className="sticky top-0 z-50">
         <OfferBar />
         <Header />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://powercare-services.powercare-prod.workers.dev/sitemap.xml

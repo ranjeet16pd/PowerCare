@@ -34,6 +34,12 @@ export interface BusinessConfig {
     title: string;
     description: string;
   };
+  /** Public origin used for canonical, Open Graph, sitemap, and schema. */
+  siteUrl: string;
+  /** Path or absolute URL of the social share image. */
+  ogImage: string;
+  /** Paste the token from Google Search Console if you verify via HTML tag. */
+  googleSiteVerification?: string;
   offers: OfferDefinition[];
 }
 
@@ -62,10 +68,12 @@ export const businessConfig: BusinessConfig = {
     alt: "Technician working on an electrical enclosure",
   },
   meta: {
-    title: "PowerCare Services | Electrical Panel & Generator Service",
+    title: "Electrical Panel & Generator Service | PowerCare",
     description:
-      "Free inspection visit for electrical panel and generator service. Repair starts only after you approve the estimate.",
+      "Free inspection visit for electrical panel, AMF/ATS and generator repair. Estimate first — repair starts only after you approve. Call or WhatsApp PowerCare Services.",
   },
+  siteUrl: "https://powercare-services.powercare-prod.workers.dev",
+  ogImage: "/images/hero-electrical-panel.jpg",
   offers: [
     {
       id: "free_visit",
@@ -221,4 +229,17 @@ export function getCustomerTypeLabel(value: CustomerType): string {
   return (
     customerTypeOptions.find((o) => o.value === value)?.label ?? value
   );
+}
+
+export function absoluteUrl(path = "/"): string {
+  const origin = businessConfig.siteUrl.replace(/\/$/, "");
+  if (/^https?:\/\//i.test(path)) return path;
+  const normalised = path.startsWith("/") ? path : `/${path}`;
+  return `${origin}${normalised}`;
+}
+
+export function getE164Phone(raw: string): string {
+  const digits = digitsOnlyPhone(raw);
+  if (digits.startsWith("91") && digits.length === 12) return `+${digits}`;
+  return `+91${digits}`;
 }
