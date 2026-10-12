@@ -39,7 +39,7 @@ export interface BusinessConfig {
 export const businessConfig: BusinessConfig = {
   name: "PowerCare Services",
   tagline: "Electrical panel & generator service coordination",
-  serviceArea: "[CITY / SERVICE AREA]",
+  serviceArea: "",
   phoneDisplay: "+91 99101 03171",
   phoneTel: "9910103171",
   whatsappDisplay: "+91 93152 30568",
@@ -59,6 +59,10 @@ export const businessConfig: BusinessConfig = {
       "Book electrical panel and generator inspection, repair and maintenance for factories, societies and commercial buildings. Clear visit charges before you confirm.",
   },
 };
+
+export function isServiceAreaConfigured(): boolean {
+  return !isPlaceholderValue(businessConfig.serviceArea);
+}
 
 export function isPhoneConfigured(): boolean {
   return !isPlaceholderValue(businessConfig.phoneTel);
@@ -92,6 +96,7 @@ export const customerTypeOptions: { value: CustomerType; label: string }[] = [
   { value: "housing_society", label: "Housing society" },
   { value: "hotel", label: "Hotel" },
   { value: "school", label: "School / Institution" },
+  { value: "hospital", label: "Hospital" },
   { value: "office", label: "Office" },
   { value: "commercial", label: "Commercial building" },
   { value: "other", label: "Other" },

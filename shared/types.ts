@@ -3,6 +3,7 @@ export type CustomerType =
   | "housing_society"
   | "hotel"
   | "school"
+  | "hospital"
   | "office"
   | "commercial"
   | "other";

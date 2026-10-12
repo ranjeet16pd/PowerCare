@@ -5,6 +5,7 @@ import {
   getTelLink,
   getWhatsAppWaMeLink,
   isPhoneConfigured,
+  isServiceAreaConfigured,
   isWhatsAppConfigured,
 } from "@/config/business";
 import { formatGeneralBookingMessage } from "@/lib/whatsapp";
@@ -29,22 +30,20 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-amber-brand">
-              Service area &amp; hours
+              Hours
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <span className="text-navy-300">Area:</span>{" "}
-                {businessConfig.serviceArea}
-              </li>
+              {isServiceAreaConfigured() && (
+                <li>
+                  <span className="text-navy-300">Area:</span>{" "}
+                  {businessConfig.serviceArea}
+                </li>
+              )}
               <li>
                 <span className="text-navy-300">Hours:</span>{" "}
                 {businessConfig.businessHours}
               </li>
             </ul>
-            <p className="mt-3 text-xs text-navy-400">
-              No walk-in address is listed online. Contact us by phone or
-              WhatsApp to schedule a visit.
-            </p>
           </div>
 
           <div>

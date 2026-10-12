@@ -39,14 +39,14 @@ Edit **`src/config/business.ts`** (single source of truth):
 | Field | Purpose |
 |-------|---------|
 | `name` | Business name shown across the site |
-| `serviceArea` | City / region (FAQs, hero, footer) |
+| `serviceArea` | Optional city / region (hidden until you fill it in) |
 | `phoneDisplay` / `phoneTel` | Visible label and `tel:` link digits |
 | `whatsappDisplay` / `whatsappNumber` | Label and `wa.me` number (10-digit or with `91`) |
 | `businessHours` | Footer contact block |
 | `heroImage` | Path under `public/` and alt text |
 | `meta` | Page title and meta description |
 
-Replace placeholders like `[PHONE NUMBER]` and `[CITY / SERVICE AREA]` with real values. Until then, call/WhatsApp buttons stay disabled and the booking form shows a configuration notice.
+Leave `serviceArea` empty until you have a city to list — it will not show on the site. Replace sample reviews in `src/data/reviews.ts` with customer-approved quotes when you have them.
 
 ### Images
 

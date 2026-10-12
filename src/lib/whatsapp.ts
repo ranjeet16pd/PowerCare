@@ -2,6 +2,7 @@ import {
   businessConfig,
   getCustomerTypeLabel,
   getServiceById,
+  isServiceAreaConfigured,
 } from "@/config/business";
 import type { ServiceEnquiry } from "@shared/types";
 import { normalizeIndianMobile } from "@shared/validation";
@@ -36,15 +37,16 @@ export function formatEnquiryWhatsAppMessage(
 }
 
 export function formatQuickServiceMessage(serviceTitle: string): string {
-  return [
+  const lines = [
     `Hello ${businessConfig.name},`,
     "",
     `I would like to book: *${serviceTitle}*`,
-    "",
-    `Location: ${businessConfig.serviceArea}`,
-    "",
-    "Please share visit charges and availability.",
-  ].join("\n");
+  ];
+  if (isServiceAreaConfigured()) {
+    lines.push("", `Location: ${businessConfig.serviceArea}`);
+  }
+  lines.push("", "Please share visit charges and availability.");
+  return lines.join("\n");
 }
 
 export function formatGeneralBookingMessage(): string {

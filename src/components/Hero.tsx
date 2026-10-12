@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 
 import { ContactActions } from "@/components/ContactActions";
-import { businessConfig } from "@/config/business";
+import { businessConfig, isServiceAreaConfigured } from "@/config/business";
 import { motionSafeClass } from "@/lib/motion";
 
 const highlights = [
@@ -22,7 +22,9 @@ const highlights = [
   {
     icon: MapPinned,
     title: "Local service coordination",
-    text: `Serving ${businessConfig.serviceArea} and nearby areas.`,
+    text: isServiceAreaConfigured()
+      ? `Serving ${businessConfig.serviceArea} and nearby areas.`
+      : "Share your PIN code — we confirm coverage before scheduling a visit.",
   },
 ];
 
@@ -36,16 +38,18 @@ export function Hero() {
       <div className="section-pad container-narrow">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={motionSafeClass("animate-fade-up")}>
-            <p className="mb-3 inline-flex items-center rounded-full border border-navy-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-700">
-              {businessConfig.serviceArea}
-            </p>
+            {isServiceAreaConfigured() && (
+              <p className="mb-3 inline-flex items-center rounded-full border border-navy-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-700">
+                {businessConfig.serviceArea}
+              </p>
+            )}
             <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-navy-950 sm:text-5xl">
               Electrical Panel &amp; Generator Service, Without the Hassle.
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Book inspection, repair and maintenance for your factory, society
-              or commercial building. Share your issue and get a clear visit
-              charge before confirming.
+              Book inspection, repair and maintenance for your factory, society,
+              hospital or commercial building. Share your issue and get a clear
+              visit charge before confirming.
             </p>
             <div className="mt-8">
               <ContactActions showConfigHint />

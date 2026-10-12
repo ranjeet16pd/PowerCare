@@ -5,13 +5,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { businessConfig } from "@/config/business";
+import { businessConfig, isServiceAreaConfigured } from "@/config/business";
 
 const faqs = [
   {
     id: "areas",
     question: "Which areas do you serve?",
-    answer: `We coordinate service across ${businessConfig.serviceArea} and nearby locations. Share your PIN code in the enquiry form so we can confirm coverage and visit charges.`,
+    answer: isServiceAreaConfigured()
+      ? `We coordinate service across ${businessConfig.serviceArea} and nearby locations. Share your PIN code in the enquiry form so we can confirm coverage and visit charges.`
+      : "Share your PIN code in the enquiry form so we can confirm coverage and visit charges before scheduling.",
   },
   {
     id: "visit-charge",

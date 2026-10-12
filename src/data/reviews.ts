@@ -26,4 +26,25 @@ export const reviews: DemoReview[] = [
       "The inspection helped us understand what needed immediate repair and what could wait.",
     isDemo: true,
   },
+  {
+    id: "demo-4",
+    label: "Sample hospital customer",
+    quote:
+      "They checked both the backup generator and the changeover panel, then listed what to fix first.",
+    isDemo: true,
+  },
+  {
+    id: "demo-5",
+    label: "Sample hotel customer",
+    quote:
+      "Visit charges were shared before the technician came, and the generator service was explained in simple terms.",
+    isDemo: true,
+  },
+  {
+    id: "demo-6",
+    label: "Sample school customer",
+    quote:
+      "The panel upgrade estimate was approved before any parts were replaced, which made planning easier.",
+    isDemo: true,
+  },
 ];

@@ -31,6 +31,11 @@ const segments = [
     src: "/images/segment-commercial.jpg",
     alt: "Modern commercial building exterior",
   },
+  {
+    label: "Hospitals",
+    src: "/images/segment-hospital.jpg",
+    alt: "Hospital building exterior",
+  },
 ];
 
 export function WhoWeServe() {
@@ -41,10 +46,10 @@ export function WhoWeServe() {
           align="center"
           eyebrow="Customers"
           title="Who we serve"
-          description="We support facilities that depend on reliable panels and backup power — from industrial plants to residential complexes."
+          description="We support facilities that depend on reliable panels and backup power — factories, societies, hotels, schools, offices, commercial buildings and hospitals."
           className="mx-auto text-center"
         />
-        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {segments.map((item) => (
             <li
               key={item.label}
