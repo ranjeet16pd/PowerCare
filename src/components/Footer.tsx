@@ -1,5 +1,7 @@
 import { MessageCircle, Phone } from "lucide-react";
 
+import { Reveal } from "@/components/Reveal";
+
 import {
   businessConfig,
   getTelLink,
@@ -18,6 +20,7 @@ export function Footer() {
   return (
     <footer id="contact" className="border-t border-navy-800 bg-navy-950 text-navy-100">
       <div className="section-pad container-narrow pb-28 lg:pb-16">
+        <Reveal>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h2 className="font-display text-xl font-bold text-white">
@@ -82,6 +85,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
+        </Reveal>
 
         <div className="mt-10 space-y-3 border-t border-navy-800 pt-6 text-xs leading-relaxed text-navy-400">
           <p>

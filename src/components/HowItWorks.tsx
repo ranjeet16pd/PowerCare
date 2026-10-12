@@ -36,17 +36,19 @@ export function HowItWorks() {
               description="A straightforward path from enquiry to completed repair — with approval at each important step."
               className="mb-6 lg:mb-0"
             />
-            <div className="listing-card mt-6 hidden overflow-hidden rounded-2xl border border-navy-100 shadow-sm hover:shadow-xl lg:block">
-              <img
-                src="/images/service-amc.jpg"
-                alt="On-site discussion before a service visit"
-                className="aspect-[4/3] w-full object-cover"
-                width={720}
-                height={540}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <Reveal>
+              <div className="listing-card group mt-6 hidden overflow-hidden rounded-2xl border border-navy-100 lg:block">
+                <img
+                  src="/images/service-amc.jpg"
+                  alt="On-site discussion before a service visit"
+                  className="media-zoom aspect-[4/3] w-full object-cover"
+                  width={720}
+                  height={540}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </Reveal>
           </div>
           <ol className="grid gap-4">
             {steps.map((item, index) => (

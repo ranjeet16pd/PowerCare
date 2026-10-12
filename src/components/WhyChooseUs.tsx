@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { businessConfig } from "@/config/business";
 
@@ -16,17 +17,19 @@ export function WhyChooseUs() {
     <section className="section-pad bg-navy-900 text-white">
       <div className="container-narrow">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="overflow-hidden rounded-2xl border border-navy-700 shadow-xl">
-            <img
-              src={businessConfig.technicianImage.src}
-              alt={businessConfig.technicianImage.alt}
-              className="aspect-[4/3] w-full object-cover"
-              width={800}
-              height={600}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+          <Reveal variant="left">
+            <div className="group overflow-hidden rounded-2xl border border-navy-700 shadow-xl">
+              <img
+                src={businessConfig.technicianImage.src}
+                alt={businessConfig.technicianImage.alt}
+                className="media-zoom aspect-[4/3] w-full object-cover"
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </Reveal>
           <div>
             <SectionHeading
               eyebrow="Why PowerCare"
@@ -35,15 +38,19 @@ export function WhyChooseUs() {
               className="mb-8 [&_h2]:text-white [&_p]:text-navy-100"
             />
             <ul className="space-y-4">
-              {points.map((point) => (
-                <li key={point} className="flex gap-3">
-                  <CheckCircle2
-                    className="mt-0.5 h-5 w-5 shrink-0 text-amber-brand"
-                    aria-hidden
-                  />
-                  <span className="text-base leading-relaxed text-navy-50">
-                    {point}
-                  </span>
+              {points.map((point, index) => (
+                <li key={point}>
+                  <Reveal delay={index * 90} variant="right">
+                    <div className="flex gap-3">
+                      <CheckCircle2
+                        className="mt-0.5 h-5 w-5 shrink-0 text-amber-brand"
+                        aria-hidden
+                      />
+                      <span className="text-base leading-relaxed text-navy-50">
+                        {point}
+                      </span>
+                    </div>
+                  </Reveal>
                 </li>
               ))}
             </ul>

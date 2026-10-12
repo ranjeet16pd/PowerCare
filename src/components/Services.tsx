@@ -63,7 +63,7 @@ export function Services({ onBookService }: ServicesProps) {
                   <img
                     src={service.image.src}
                     alt={service.image.alt}
-                    className="aspect-[16/10] w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-110"
+                    className="media-zoom aspect-[16/10] w-full object-cover"
                     width={640}
                     height={400}
                     loading="lazy"

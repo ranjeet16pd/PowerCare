@@ -60,7 +60,7 @@ export function WhoWeServe() {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="aspect-[4/5] w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-110"
+                className="media-zoom aspect-[4/5] w-full object-cover"
                 width={320}
                 height={400}
                 loading="lazy"

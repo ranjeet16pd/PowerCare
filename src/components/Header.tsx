@@ -33,19 +33,19 @@ export function Header() {
   return (
     <header
       className={cn(
-        "border-b transition-colors duration-300",
+        "border-b bg-white/90 backdrop-blur-md transition-[box-shadow,background-color,border-color] duration-500",
         scrolled
-          ? "border-navy-100 bg-white shadow-sm"
-          : "border-navy-100 bg-white",
+          ? "border-navy-100 shadow-[0_8px_24px_-12px_rgba(12,22,38,0.18)]"
+          : "border-transparent shadow-none",
       )}
     >
       <div className="container-narrow flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="flex min-w-0 items-center gap-2 text-navy-900"
+          className="group flex min-w-0 items-center gap-2 text-navy-900"
         >
           <span
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-800 text-amber-brand"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-800 text-amber-brand motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:rotate-12 motion-safe:group-hover:scale-110"
             aria-hidden
           >
             <Zap className="h-5 w-5" />
@@ -60,7 +60,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-900"
+              className="relative rounded-md px-3 py-2 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-900 after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-brand after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
               {item.label}
             </a>
@@ -92,7 +92,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-nav"
-          className="border-t border-navy-100 bg-white px-4 py-4 lg:hidden"
+          className="border-t border-navy-100 bg-white px-4 py-4 motion-safe:animate-fade-up lg:hidden"
           aria-label="Mobile"
         >
           <ul className="space-y-1">

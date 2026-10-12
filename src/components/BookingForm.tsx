@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { type FormEvent, useEffect, useState } from "react";
 
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -102,9 +103,10 @@ export function BookingForm({ selectedServiceId }: BookingFormProps) {
           </div>
         )}
 
+        <Reveal>
         <form
           onSubmit={handleSubmit}
-          className="grid gap-6 rounded-2xl border border-navy-100 bg-navy-50/30 p-6 shadow-sm sm:p-8 lg:grid-cols-2"
+          className="grid gap-6 rounded-2xl border border-navy-100 bg-navy-50/30 p-6 shadow-sm motion-safe:transition-shadow motion-safe:duration-500 motion-safe:hover:shadow-lg sm:p-8 lg:grid-cols-2"
           noValidate
         >
           <div className="space-y-4">
@@ -271,6 +273,7 @@ export function BookingForm({ selectedServiceId }: BookingFormProps) {
             </Button>
           </div>
         </form>
+        </Reveal>
 
         <p className="mt-4 text-center text-sm text-muted-foreground">
           Enquiries are handled by {businessConfig.name}. Visit confirmation,

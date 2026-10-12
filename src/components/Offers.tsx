@@ -35,7 +35,9 @@ export function Offers() {
     <section id="offers" className="section-pad bg-navy-900 text-white">
       <div className="container-narrow">
         <div className="mb-6 flex justify-center">
-          <FreeBadge size="lg" />
+          <Reveal variant="scale">
+            <FreeBadge size="lg" />
+          </Reveal>
         </div>
         <SectionHeading
           align="center"

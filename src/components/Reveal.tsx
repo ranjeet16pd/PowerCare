@@ -6,10 +6,12 @@ export function Reveal({
   children,
   className,
   delay = 0,
+  variant = "up",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: "up" | "left" | "right" | "scale";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -37,7 +39,14 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      className={cn("reveal", visible && "reveal-in", className)}
+      className={cn(
+        "reveal",
+        variant === "left" && "reveal-left",
+        variant === "right" && "reveal-right",
+        variant === "scale" && "reveal-scale",
+        visible && "reveal-in",
+        className,
+      )}
       style={{ transitionDelay: visible ? `${delay}ms` : undefined }}
     >
       {children}

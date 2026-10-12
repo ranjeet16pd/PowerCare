@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import {
   Accordion,
@@ -58,6 +59,7 @@ export function FAQ() {
           description="Transparent answers about coverage, charges and how booking works."
           className="mx-auto text-center"
         />
+        <Reveal>
         <Accordion type="single" collapsible className="rounded-xl border border-navy-100 bg-white px-4 sm:px-6">
           {faqs.map((faq) => (
             <AccordionItem key={faq.id} value={faq.id}>
@@ -68,6 +70,7 @@ export function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+        </Reveal>
       </div>
     </section>
   );
