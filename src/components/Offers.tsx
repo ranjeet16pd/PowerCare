@@ -1,6 +1,7 @@
 import { ClipboardCheck, Gift, PhoneCall } from "lucide-react";
 
 import { FreeBadge } from "@/components/FreeBadge";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { businessConfig, type OfferDefinition } from "@/config/business";
@@ -44,25 +45,28 @@ export function Offers() {
           className="mx-auto mb-10 text-center [&_h2]:text-white [&_p]:text-navy-100"
         />
         <ul className="grid gap-5 md:grid-cols-3">
-          {businessConfig.offers.map((offer) => {
+          {businessConfig.offers.map((offer, index) => {
             const featured = offer.id === "free_visit";
             return (
-              <li
-                key={offer.id}
-                className={cn(
-                  "rounded-2xl border p-6 shadow-sm",
-                  featured
-                    ? "border-amber-brand bg-navy-800 ring-2 ring-amber-brand/60 motion-safe:animate-pulse-glow"
-                    : "border-navy-700 bg-navy-800/60",
-                )}
-              >
-                <OfferIcon offer={offer} featured={featured} />
-                <h3 className="font-display text-xl font-semibold text-white">
-                  {offer.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-100">
-                  {offer.description}
-                </p>
+              <li key={offer.id}>
+                <Reveal delay={index * 90}>
+                  <div
+                    className={cn(
+                      "listing-card rounded-2xl border p-6 shadow-sm hover:shadow-xl",
+                      featured
+                        ? "border-amber-brand bg-navy-800 ring-2 ring-amber-brand/60 motion-safe:animate-pulse-glow"
+                        : "border-navy-700 bg-navy-800/60",
+                    )}
+                  >
+                    <OfferIcon offer={offer} featured={featured} />
+                    <h3 className="font-display text-xl font-semibold text-white">
+                      {offer.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-navy-100">
+                      {offer.description}
+                    </p>
+                  </div>
+                </Reveal>
               </li>
             );
           })}

@@ -81,9 +81,9 @@ wrangler.jsonc Cloudflare Worker + SPA asset routing
 
 ## Production URL
 
-**Live site:** [https://powercare-services.ranjeet16pd.workers.dev](https://powercare-services.ranjeet16pd.workers.dev)
+**Live site:** [https://powercare-services.powercare-prod.workers.dev](https://powercare-services.powercare-prod.workers.dev)
 
-Health check: `https://powercare-services.ranjeet16pd.workers.dev/api/health`
+Health check: `https://powercare-services.powercare-prod.workers.dev/api/health`
 
 ## Auto-deploy from GitHub (recommended)
 

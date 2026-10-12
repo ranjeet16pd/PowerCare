@@ -103,6 +103,10 @@ export default {
           "70%": { boxShadow: "0 0 0 12px rgba(245, 158, 11, 0)" },
           "100%": { boxShadow: "0 0 0 0 rgba(245, 158, 11, 0)" },
         },
+        kenburns: {
+          "0%": { transform: "scale(1) translate(0, 0)" },
+          "100%": { transform: "scale(1.08) translate(-1%, -1%)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out forwards",
@@ -113,6 +117,7 @@ export default {
         shimmer: "shimmer 2.4s linear infinite",
         "free-pop": "free-pop 1.8s ease-in-out infinite",
         "ring-pulse": "ring-pulse 1.8s ease-out infinite",
+        kenburns: "kenburns 18s ease-out infinite alternate",
       },
     },
   },

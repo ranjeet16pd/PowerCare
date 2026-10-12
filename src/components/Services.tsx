@@ -7,6 +7,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppLinkButton } from "@/components/ContactActions";
 import {
@@ -53,15 +54,16 @@ export function Services({ onBookService }: ServicesProps) {
           title="Panel, generator & maintenance support"
           description="Choose a service to start your enquiry. Inspection visit is free. Repair work is quoted after inspection."
         />
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
             <li key={service.id}>
-              <Card className="group flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg">
+              <Reveal delay={index * 80}>
+              <Card className="listing-card group flex h-full flex-col overflow-hidden rounded-2xl hover:shadow-xl">
                 <div className="relative overflow-hidden">
                   <img
                     src={service.image.src}
                     alt={service.image.alt}
-                    className="aspect-[16/10] w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                    className="aspect-[16/10] w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-110"
                     width={640}
                     height={400}
                     loading="lazy"
@@ -97,6 +99,7 @@ export function Services({ onBookService }: ServicesProps) {
                   </button>
                 </CardContent>
               </Card>
+              </Reveal>
             </li>
           ))}
         </ul>

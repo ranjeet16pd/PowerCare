@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const steps = [
@@ -35,7 +36,7 @@ export function HowItWorks() {
               description="A straightforward path from enquiry to completed repair — with approval at each important step."
               className="mb-6 lg:mb-0"
             />
-            <div className="mt-6 hidden overflow-hidden rounded-2xl border border-navy-100 shadow-sm lg:block">
+            <div className="listing-card mt-6 hidden overflow-hidden rounded-2xl border border-navy-100 shadow-sm hover:shadow-xl lg:block">
               <img
                 src="/images/service-amc.jpg"
                 alt="On-site discussion before a service visit"
@@ -48,25 +49,26 @@ export function HowItWorks() {
             </div>
           </div>
           <ol className="grid gap-4">
-            {steps.map((item) => (
-              <li
-                key={item.step}
-                className="relative flex gap-4 rounded-xl border border-navy-100 bg-white p-5 shadow-sm"
-              >
-                <span
-                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-800 text-sm font-bold text-amber-brand"
-                  aria-hidden
-                >
-                  {item.step}
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-navy-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {item.text}
-                  </p>
-                </div>
+            {steps.map((item, index) => (
+              <li key={item.step}>
+                <Reveal delay={index * 90}>
+                  <div className="listing-card relative flex gap-4 rounded-2xl border border-navy-100 bg-white p-5 shadow-sm hover:shadow-xl">
+                    <span
+                      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-800 text-sm font-bold text-amber-brand"
+                      aria-hidden
+                    >
+                      {item.step}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-semibold text-navy-900">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
               </li>
             ))}
           </ol>

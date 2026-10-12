@@ -67,7 +67,7 @@ export function Hero() {
               <img
                 src={businessConfig.heroImage.src}
                 alt={businessConfig.heroImage.alt}
-                className="aspect-[4/5] h-full w-full object-cover sm:aspect-[4/3]"
+                className="aspect-[4/5] h-full w-full object-cover motion-safe:animate-kenburns sm:aspect-[4/3]"
                 width={800}
                 height={600}
                 loading="eager"
@@ -105,8 +105,8 @@ export function Hero() {
                 key={item.title}
                 className={
                   featured
-                    ? "rounded-xl border-2 border-amber-brand bg-amber-50 p-5 shadow-md motion-safe:animate-pulse-glow"
-                    : "rounded-xl border border-navy-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                    ? "listing-card rounded-2xl border-2 border-amber-brand bg-amber-50 p-5 shadow-md motion-safe:animate-pulse-glow"
+                    : "listing-card rounded-2xl border border-navy-100 bg-white p-5 shadow-sm hover:shadow-xl"
                 }
               >
                 <item.icon

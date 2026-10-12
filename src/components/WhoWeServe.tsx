@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const segments = [
@@ -50,15 +51,16 @@ export function WhoWeServe() {
           className="mx-auto text-center"
         />
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {segments.map((item) => (
-            <li
-              key={item.label}
-              className="group relative overflow-hidden rounded-xl border border-navy-100 shadow-sm"
+          {segments.map((item, index) => (
+            <li key={item.label}>
+            <Reveal delay={index * 70}>
+            <div
+              className="listing-card group relative overflow-hidden rounded-2xl border border-navy-100 shadow-sm hover:shadow-xl"
             >
               <img
                 src={item.src}
                 alt={item.alt}
-                className="aspect-[4/5] w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                className="aspect-[4/5] w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-110"
                 width={320}
                 height={400}
                 loading="lazy"
@@ -68,6 +70,8 @@ export function WhoWeServe() {
               <span className="absolute inset-x-0 bottom-0 p-3 text-center text-sm font-semibold text-white">
                 {item.label}
               </span>
+            </div>
+            </Reveal>
             </li>
           ))}
         </ul>

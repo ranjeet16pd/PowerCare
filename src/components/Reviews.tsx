@@ -1,5 +1,6 @@
 import { MessageSquareQuote } from "lucide-react";
 
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
 import { reviews } from "@/data/reviews";
@@ -14,9 +15,10 @@ export function Reviews() {
           description="The cards below use sample text to show how real reviews can appear once you add customer-approved feedback."
         />
         <ul className="grid gap-5 md:grid-cols-3">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <li key={review.id}>
-              <Card className="h-full border-dashed border-amber-200/80 bg-white">
+              <Reveal delay={index * 80}>
+              <Card className="listing-card h-full rounded-2xl border-dashed border-amber-200/80 bg-white hover:shadow-xl">
                 <CardContent className="flex h-full flex-col p-6">
                   <p
                     className="mb-3 inline-flex w-fit rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-900 ring-1 ring-amber-200"
@@ -36,6 +38,7 @@ export function Reviews() {
                   </p>
                 </CardContent>
               </Card>
+              </Reveal>
             </li>
           ))}
         </ul>
