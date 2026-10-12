@@ -37,7 +37,7 @@ export const reviews: DemoReview[] = [
     id: "demo-5",
     label: "Sample hotel customer",
     quote:
-      "Visit charges were shared before the technician came, and the generator service was explained in simple terms.",
+      "The inspection visit was free, and the generator service was explained in simple terms.",
     isDemo: true,
   },
   {

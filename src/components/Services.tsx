@@ -51,7 +51,7 @@ export function Services({ onBookService }: ServicesProps) {
         <SectionHeading
           eyebrow="Services"
           title="Panel, generator & maintenance support"
-          description="Choose a service to start your enquiry. We confirm visit charges and scope before scheduling."
+          description="Choose a service to start your enquiry. Inspection visit is free. Repair work is quoted after inspection."
         />
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (

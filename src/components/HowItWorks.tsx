@@ -8,8 +8,8 @@ const steps = [
   },
   {
     step: "2",
-    title: "We discuss the problem and confirm visit charges",
-    text: "Scope and visit charges are communicated before you confirm a visit.",
+    title: "We confirm a free inspection visit",
+    text: "Availability is confirmed on WhatsApp or phone. There is no charge for the inspection visit.",
   },
   {
     step: "3",

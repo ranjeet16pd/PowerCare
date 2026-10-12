@@ -16,8 +16,8 @@ const highlights = [
   },
   {
     icon: BadgeIndianRupee,
-    title: "Clear repair estimates",
-    text: "Visit charges and repair scope discussed before work begins.",
+    title: "Free inspection visit",
+    text: "No visit charge for inspection. Repair and parts are quoted after we see the equipment.",
   },
   {
     icon: MapPinned,
@@ -38,8 +38,11 @@ export function Hero() {
       <div className="section-pad container-narrow">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={motionSafeClass("animate-fade-up")}>
+            <p className="mb-3 inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-brandDark">
+              Inspection visit is free
+            </p>
             {isServiceAreaConfigured() && (
-              <p className="mb-3 inline-flex items-center rounded-full border border-navy-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-700">
+              <p className="mb-3 ml-2 inline-flex items-center rounded-full border border-navy-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-700">
                 {businessConfig.serviceArea}
               </p>
             )}
@@ -48,8 +51,8 @@ export function Hero() {
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               Book inspection, repair and maintenance for your factory, society,
-              hospital or commercial building. Share your issue and get a clear
-              visit charge before confirming.
+              hospital or commercial building. Inspection visit is free — repair
+              starts only after you approve the estimate.
             </p>
             <div className="mt-8">
               <ContactActions showConfigHint />

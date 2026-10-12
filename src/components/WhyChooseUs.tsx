@@ -6,7 +6,7 @@ import { businessConfig } from "@/config/business";
 const points = [
   "Led by an experienced electrical panel and generator technician.",
   "One contact for coordinating panel and generator issues.",
-  "Visit charges communicated before booking.",
+  "Inspection visit is free.",
   "Repair estimate approved before work begins.",
   "Clear updates during service.",
 ];

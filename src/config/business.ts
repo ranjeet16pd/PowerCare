@@ -34,6 +34,14 @@ export interface BusinessConfig {
     title: string;
     description: string;
   };
+  offers: OfferDefinition[];
+}
+
+export interface OfferDefinition {
+  id: string;
+  title: string;
+  description: string;
+  icon: "free" | "estimate" | "contact";
 }
 
 export const businessConfig: BusinessConfig = {
@@ -56,8 +64,31 @@ export const businessConfig: BusinessConfig = {
   meta: {
     title: "PowerCare Services | Electrical Panel & Generator Service",
     description:
-      "Book electrical panel and generator inspection, repair and maintenance for factories, societies and commercial buildings. Clear visit charges before you confirm.",
+      "Free inspection visit for electrical panel and generator service. Repair starts only after you approve the estimate.",
   },
+  offers: [
+    {
+      id: "free_visit",
+      title: "Inspection visit is free",
+      description:
+        "No charge for the on-site inspection. Spare parts and repair work are quoted after we see the equipment.",
+      icon: "free",
+    },
+    {
+      id: "approve_estimate",
+      title: "Pay for repair only after you approve",
+      description:
+        "We share a clear estimate first. Repair and parts start only after you say yes.",
+      icon: "estimate",
+    },
+    {
+      id: "one_contact",
+      title: "One contact for panel and generator",
+      description:
+        "Share the issue once. We coordinate electrical panel, AMF/ATS and generator work together.",
+      icon: "contact",
+    },
+  ],
 };
 
 export function isServiceAreaConfigured(): boolean {

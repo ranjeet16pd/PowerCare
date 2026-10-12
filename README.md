@@ -45,6 +45,7 @@ Edit **`src/config/business.ts`** (single source of truth):
 | `businessHours` | Footer contact block |
 | `heroImage` | Path under `public/` and alt text |
 | `meta` | Page title and meta description |
+| `offers` | Promotional offers (free inspection visit, estimate-before-repair) |
 
 Leave `serviceArea` empty until you have a city to list — it will not show on the site. Replace sample reviews in `src/data/reviews.ts` with customer-approved quotes when you have them.
 

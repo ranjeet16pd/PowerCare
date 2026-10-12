@@ -12,14 +12,14 @@ const faqs = [
     id: "areas",
     question: "Which areas do you serve?",
     answer: isServiceAreaConfigured()
-      ? `We coordinate service across ${businessConfig.serviceArea} and nearby locations. Share your PIN code in the enquiry form so we can confirm coverage and visit charges.`
-      : "Share your PIN code in the enquiry form so we can confirm coverage and visit charges before scheduling.",
+      ? `We coordinate service across ${businessConfig.serviceArea} and nearby locations. Share your PIN code in the enquiry form so we can confirm coverage.`
+      : "Share your PIN code in the enquiry form so we can confirm coverage before scheduling.",
   },
   {
     id: "visit-charge",
     question: "What is the visit charge?",
     answer:
-      "Visit charges depend on location, equipment type and scope. We discuss the issue first and communicate visit charges before you confirm a booking.",
+      "The inspection visit is free. Spare parts and repair work are quoted after inspection and start only after you approve the estimate.",
   },
   {
     id: "spare-parts",
@@ -43,7 +43,7 @@ const faqs = [
     id: "confirmation",
     question: "Is the visit confirmed immediately?",
     answer:
-      "No. Sending a WhatsApp enquiry does not confirm a visit. We confirm availability, visit charges and scope with you before scheduling the technician.",
+      "No. Sending a WhatsApp enquiry does not confirm a visit. We confirm availability with you before scheduling the free inspection.",
   },
 ];
 

@@ -87,7 +87,7 @@ export function BookingForm({ selectedServiceId }: BookingFormProps) {
         <SectionHeading
           eyebrow="Enquiry"
           title="Book a service visit"
-          description="Fill in your details and send the enquiry on WhatsApp. We will respond with availability and visit charges — sending this form does not confirm a visit."
+          description="Fill in your details and send the enquiry on WhatsApp. Inspection visit is free. Sending this form does not confirm a visit — we confirm availability first."
         />
 
         {!waConfigured && (

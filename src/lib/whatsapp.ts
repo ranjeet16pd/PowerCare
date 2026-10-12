@@ -30,7 +30,7 @@ export function formatEnquiryWhatsAppMessage(
     `*Problem:*`,
     enquiry.problemDescription.trim(),
     "",
-    "_Sent via website enquiry form. Visit and charges to be confirmed._",
+    "_Sent via website enquiry form. Inspection visit is free. Availability to be confirmed._",
   );
 
   return lines.join("\n");
@@ -45,7 +45,7 @@ export function formatQuickServiceMessage(serviceTitle: string): string {
   if (isServiceAreaConfigured()) {
     lines.push("", `Location: ${businessConfig.serviceArea}`);
   }
-  lines.push("", "Please share visit charges and availability.");
+  lines.push("", "Please share availability for a free inspection visit.");
   return lines.join("\n");
 }
 
@@ -55,6 +55,6 @@ export function formatGeneralBookingMessage(): string {
     "",
     "I would like to book an electrical panel / generator service visit.",
     "",
-    "Please share visit charges and next available slot.",
+    "Please share availability for a free inspection visit.",
   ].join("\n");
 }

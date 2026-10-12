@@ -75,7 +75,7 @@ export function Header() {
             className="hidden sm:inline-flex"
             asChild
           >
-            <a href="#booking">Book a Service</a>
+            <a href="#booking">Book free visit</a>
           </Button>
           <button
             type="button"
@@ -111,7 +111,7 @@ export function Header() {
             <li className="pt-2">
               <Button variant="amber" className="w-full" asChild>
                 <a href="#booking" onClick={() => setOpen(false)}>
-                  Book a Service
+                  Book free visit
                 </a>
               </Button>
             </li>
