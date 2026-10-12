@@ -26,9 +26,3 @@ export interface ServiceEnquiry {
   problemDescription: string;
 }
 
-export interface DemoReview {
-  id: string;
-  label: string;
-  quote: string;
-  isDemo: true;
-}

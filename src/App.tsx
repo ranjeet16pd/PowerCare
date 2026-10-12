@@ -9,7 +9,6 @@ import { OfferBar } from "@/components/OfferBar";
 import { Offers } from "@/components/Offers";
 import { HowItWorks } from "@/components/HowItWorks";
 import { MobileActionBar } from "@/components/MobileActionBar";
-import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { WhoWeServe } from "@/components/WhoWeServe";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
@@ -44,7 +43,6 @@ function App() {
         <HowItWorks />
         <WhoWeServe />
         <WhyChooseUs />
-        <Reviews />
         <BookingForm selectedServiceId={selectedServiceId} />
         <FAQ />
       </main>
