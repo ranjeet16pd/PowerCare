@@ -240,7 +240,10 @@ export function BookingForm({ selectedServiceId }: BookingFormProps) {
             </div>
 
             <div>
-              <Label htmlFor="problemDescription">Description of the problem *</Label>
+              <Label htmlFor="problemDescription">
+                Description of the problem{" "}
+                <span className="text-muted-foreground">(optional)</span>
+              </Label>
               <Textarea
                 id="problemDescription"
                 name="problemDescription"
@@ -248,14 +251,8 @@ export function BookingForm({ selectedServiceId }: BookingFormProps) {
                 onChange={(e) =>
                   updateField("problemDescription", e.target.value)
                 }
-                aria-invalid={Boolean(errors.problemDescription)}
                 placeholder="What issue are you facing? When did it start?"
               />
-              {errors.problemDescription && (
-                <p className="mt-1 text-sm text-destructive">
-                  {errors.problemDescription}
-                </p>
-              )}
             </div>
 
             <p className="text-xs leading-relaxed text-muted-foreground">

@@ -25,10 +25,12 @@ export function formatEnquiryWhatsAppMessage(
     lines.push(`*Equipment brand:* ${enquiry.equipmentBrand.trim()}`);
   }
 
+  const problem = enquiry.problemDescription?.trim() ?? "";
+  if (problem) {
+    lines.push("", "*Problem:*", problem);
+  }
+
   lines.push(
-    "",
-    `*Problem:*`,
-    enquiry.problemDescription.trim(),
     "",
     "_Sent via website enquiry form. Inspection visit is free. Availability to be confirmed._",
   );

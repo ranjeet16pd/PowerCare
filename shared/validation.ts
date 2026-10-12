@@ -23,7 +23,6 @@ export interface EnquiryFieldErrors {
   customerType?: string;
   serviceId?: string;
   location?: string;
-  problemDescription?: string;
 }
 
 export function validateServiceEnquiry(
@@ -56,14 +55,6 @@ export function validateServiceEnquiry(
   const location = enquiry.location?.trim() ?? "";
   if (!location) {
     errors.location = "Location or PIN code is required.";
-  }
-
-  const problem = enquiry.problemDescription?.trim() ?? "";
-  if (!problem) {
-    errors.problemDescription = "Please describe the problem.";
-  } else if (problem.length < 10) {
-    errors.problemDescription =
-      "Please add a bit more detail (at least 10 characters).";
   }
 
   return errors;
