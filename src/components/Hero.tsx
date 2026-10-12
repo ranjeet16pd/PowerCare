@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 
 import { ContactActions } from "@/components/ContactActions";
+import { FreeBadge } from "@/components/FreeBadge";
 import { businessConfig, isServiceAreaConfigured } from "@/config/business";
 import { motionSafeClass } from "@/lib/motion";
 
@@ -38,9 +39,9 @@ export function Hero() {
       <div className="section-pad container-narrow">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={motionSafeClass("animate-fade-up")}>
-            <p className="mb-3 inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-brandDark">
-              Inspection visit is free
-            </p>
+            <div className="mb-4">
+              <FreeBadge size="lg" />
+            </div>
             {isServiceAreaConfigured() && (
               <p className="mb-3 ml-2 inline-flex items-center rounded-full border border-navy-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-700">
                 {businessConfig.serviceArea}
@@ -51,8 +52,9 @@ export function Hero() {
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               Book inspection, repair and maintenance for your factory, society,
-              hospital or commercial building. Inspection visit is free — repair
-              starts only after you approve the estimate.
+              hospital or commercial building. Inspection visit is{" "}
+              <span className="free-word">Free</span> —
+              repair starts only after you approve the estimate.
             </p>
             <div className="mt-8">
               <ContactActions showConfigHint />
@@ -72,6 +74,9 @@ export function Hero() {
                 decoding="async"
                 fetchPriority="high"
               />
+              <div className="absolute left-3 top-3">
+                <FreeBadge size="sm" className="bg-amber-brand text-navy-950" />
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/85 via-navy-950/35 to-transparent p-4 sm:p-5">
                 <p className="text-sm font-medium text-white">
                   Industrial panel inspection for factories and commercial sites
@@ -93,21 +98,32 @@ export function Hero() {
         </div>
 
         <ul className="mt-16 grid gap-4 sm:grid-cols-3">
-          {highlights.map((item) => (
-            <li
-              key={item.title}
-              className="rounded-xl border border-navy-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <item.icon
-                className="mb-3 h-6 w-6 text-amber-brandDark"
-                aria-hidden
-              />
-              <h3 className="font-semibold text-navy-900">{item.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                {item.text}
-              </p>
-            </li>
-          ))}
+          {highlights.map((item) => {
+            const featured = item.title === "Free inspection visit";
+            return (
+              <li
+                key={item.title}
+                className={
+                  featured
+                    ? "rounded-xl border-2 border-amber-brand bg-amber-50 p-5 shadow-md motion-safe:animate-pulse-glow"
+                    : "rounded-xl border border-navy-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                }
+              >
+                <item.icon
+                  className={
+                    featured
+                      ? "mb-3 h-6 w-6 text-amber-brandDark motion-safe:animate-bounce-soft"
+                      : "mb-3 h-6 w-6 text-amber-brandDark"
+                  }
+                  aria-hidden
+                />
+                <h3 className="font-semibold text-navy-900">{item.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.text}
+                </p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

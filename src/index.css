@@ -55,4 +55,14 @@
   .container-narrow {
     @apply mx-auto max-w-6xl;
   }
+
+  .free-word {
+    @apply inline-block rounded-md bg-navy-950 px-2 py-0.5 font-extrabold uppercase tracking-wide text-amber-brand;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .free-word {
+      animation: free-pop 1.8s ease-in-out infinite;
+    }
+  }
 }

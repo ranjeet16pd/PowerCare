@@ -31,8 +31,10 @@ function App() {
 
   return (
     <>
-      <OfferBar />
-      <Header />
+      <div className="sticky top-0 z-50">
+        <OfferBar />
+        <Header />
+      </div>
       <main>
         <Hero />
         <Offers />

@@ -34,10 +34,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-colors duration-300",
+        "border-b transition-colors duration-300",
         scrolled
-          ? "border-navy-100 bg-white/95 shadow-sm backdrop-blur-md"
-          : "border-transparent bg-white/80 backdrop-blur-sm",
+          ? "border-navy-100 bg-white shadow-sm"
+          : "border-navy-100 bg-white",
       )}
     >
       <div className="container-narrow flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ export function Header() {
           <Button
             variant="amber"
             size="default"
-            className="hidden sm:inline-flex"
+            className="hidden motion-safe:animate-pulse-glow sm:inline-flex"
             asChild
           >
             <a href="#booking">Book free visit</a>
